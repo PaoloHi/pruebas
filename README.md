@@ -7,3 +7,27 @@ Este código es parte de una aplicación de software escrita en C# y se utiliza 
 **`filePredialWithPath`** es una cadena de caracteres que representa la ruta y el nombre del archivo que se creará. La constante **`FileMode.Create`** indica que se debe crear un nuevo archivo y sobrescribir cualquier archivo existente con el mismo nombre.
 
 Finalmente, **`CopyTo()`** es un método que copia los datos del objeto **`Predial`** al nuevo objeto **`FileStream`**. Por lo tanto, esta línea de código copia el contenido del objeto **`Predial`** en el archivo especificado por **`filePredialWithPath`**.
+
+
+Para reparar error 
+DELETE FROM UbicacionProp
+DBCC CHECKIDENT ('UbicacionProp', RESEED, 0);
+
+DELETE FROM ConstruccionProp
+DBCC CHECKIDENT ('ConstruccionProp', RESEED, 0);
+
+DELETE FROM PublicacionProp
+DBCC CHECKIDENT ('PublicacionProp', RESEED, 0);
+
+DELETE FROM AmenidadesProp
+DBCC CHECKIDENT ('AmenidadesProp', RESEED, 0);
+
+DELETE FROM DocPropiedadRealEcomm
+DBCC CHECKIDENT ('DocPropiedadRealEcomm', RESEED, 0);
+
+DELETE FROM ImgPropiedadesRealEcomm
+DBCC CHECKIDENT ('ImgPropiedadesRealEcomm', RESEED, 0);
+
+
+DELETE FROM PropiedadRealEcomm
+DBCC CHECKIDENT ('PropiedadRealEcomm', RESEED, 0);
