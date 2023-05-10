@@ -1,12 +1,13 @@
 @model MesaControlModel
 @{
     Layout = "_NavUsuarios";
+    ViewBag.Title = "Mesa de control";
 }
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Proyecto_administracion</title>
+  
 
     <link rel="icon" type="image/png" sizes="16x16" href="~/img/imagen-logo/logo_oficial.png">
     <link rel="stylesheet" href="~/css/main.css">
@@ -24,7 +25,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
     <script src="~/js/locales-all.js"></script>
 
-    <title>Detalle Propiedad</title>
+ 
 </head>
 
 <!--animacion-->
@@ -46,7 +47,7 @@
 <!--contenido de la pagina-->
 <h4 class="ms-4 tituloVista">Mesa de control</h4>
 
-<div class="container-fluid row shadow contenedorGeneralBlanco">
+<div class="container-fluid contenedorGeneralBlanco mt-3 " style="margin: 0px 2rem; width: -webkit-fill-available;">
     <!--heading page-->
     <div class="col-12">
         <div class="message-user">
@@ -84,6 +85,7 @@
 
                 </div>
             </div>
+            
             <!--VISTA 1 -->
             <div class="data-table active border shadow" id="tblOnboarding">
                 <div class="message-btn-option mb-3">
@@ -114,7 +116,7 @@
                                     <p class="bg-sattus-pending">@mcs.Estatus</p>
                                 </td>
                                 <td>
-                                    <a class="bg-status-blue-btns-gnrl "
+                                    <a class="bg-status-blue-btns-gnrl btn"
                                        asp-controller="" asp-action="">
                                         Bienvenida
                                     </a>
@@ -171,7 +173,7 @@
                                    
                                 </td>
                                 <td>
-                                    <a class="bg-status-blue-btns-gnrl " asp-controller="Brokers" asp-action="EdicionBroker" asp-route-IDBroker="@mcdb.IDBroker">
+                                    <a class="bg-status-blue-btns-gnrl btn" asp-controller="Brokers" asp-action="EdicionBroker" asp-route-IDBroker="@mcdb.IDBroker">
                                         Ver más
                                     </a>
                                 </td>
@@ -208,11 +210,11 @@
 
                     <table class="table ">
                         <tr>
-                            <th style="border-radius: 5px 0px 0px 0px">Fecha</th>
-                            <th>Broker</th>
-                            <th>Tarea</th>
-                            <th>Estatus</th>
-                            <th style="border-radius: 0px 5px 0px 0px">Acciones</th>
+                            <th class="col-1">Fecha</th>
+                            <th class="col-3">Broker</th>
+                            <th class="col-4">Tarea</th>
+                            <th class="col-2">Estatus</th>
+                            <th class="col-2">Acciones</th>
                         </tr>
                         <tr class="tabla-hover">
                             <td>03/10/2022</td>
@@ -250,115 +252,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <tr class="tabla-hover">
-                            <td>04/10/2022</td>
-                            <td>Erika Nuñez</td>
-                            <td>Solicitar contrato de servicios</td>
-
-                            <td>
-                                <p class="bg-status-blue">Pendiente</p>
-                            </td>
-                            <td>
-                                <a class="bg-status-blue-btns-gnrl btn" href="#openModal">
-                                    Solicitar
-                                </a>
-
-                                <!-- Modal -->
-                                <div id="openModal" class="modalDialog">
-                                    <div>
-                                        <a href="#close" title="Close" class="close" onclick="resetModal()">X</a>
-                                        <div>
-                                            <div class="modal-header" id="modal-header">
-                                                <h1 class="modal-title fs-5">¿Estás seguro de que desea solicitar el contrato de servicios?</h1>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex d-inline-flex">
-                                                    <button class="btn btn-success mr-1" id="aprbarBtn">Si</button>
-
-                                                    <button class="btn btn-danger ms-1" id="rechazrBtn">No</button>
-                                                </div>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tabla-hover">
-                            <td>05/10/2022</td>
-                            <td>Arizbeth Padilla</td>
-                            <td>Solicitar contrato de servicios</td>
-                            <td>
-                                <p class="bg-status-blue">Pendiente</p>
-                            </td>
-                            <td>
-                                <a class="bg-status-blue-btns-gnrl btn" href="#openModal">
-                                    Solicitar
-                                </a>
-
-                                <!-- Modal -->
-                                <div id="openModal" class="modalDialog">
-                                    <div>
-                                        <a href="#close" title="Close" class="close" onclick="resetModal()">X</a>
-                                        <div>
-                                            <div class="modal-header" id="modal-header">
-                                                <h1 class="modal-title fs-5">¿Estás seguro de que desea solicitar el contrato de servicios?</h1>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex d-inline-flex">
-                                                    <button class="btn btn-success mr-1" id="aprbarBtn">Si</button>
-
-                                                    <button class="btn btn-danger ms-1" id="rechazrBtn">No</button>
-                                                </div>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="tabla-hover">
-                            <td>06/10/2022</td>
-                            <td>Shantal Iniestra</td>
-                            <td>Solicitar contrato de servicios</td>
-                            <td>
-                                <p class="bg-status-blue">Pendiente</p>
-                            </td>
-                            <td>
-                                <a class="bg-status-blue-btns-gnrl btn" href="#openModal">
-                                    Solicitar
-                                </a>
-
-                                <!-- Modal -->
-                                <div id="openModal" class="modalDialog">
-                                    <div>
-                                        <a href="#close" title="Close" class="close" onclick="resetModal()">X</a>
-                                        <div>
-                                            <div class="modal-header" id="modal-header">
-                                                <h1 class="modal-title fs-5">¿Estás seguro de que desea solicitar el contrato de servicios?</h1>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex d-inline-flex">
-                                                    <button class="btn btn-success mr-1" id="aprbarBtn">Si</button>
-
-                                                    <button class="btn btn-danger ms-1" id="rechazrBtn">No</button>
-                                                </div>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+                      
                     </table>
                 </div>
 
@@ -382,6 +276,7 @@
                     </ul>
                 </nav>
             </div>
+           
             <!--VISTA 2 -->
             <div class="data-table shadow" id="tblVenta">
                 <div class="message-btn-option  d-flex">
@@ -396,20 +291,20 @@
                 <div class="table-wrapper-scroll-y my-custom-scrollbar table-responsive mt-2 shadow" style="overflow-x:hidden; overflow-y:hidden;">
                     <table class="table ">
                         <tr class="tabla-hover">
-                            <th style="border-radius: 5px 0px 0px 0px">Fecha</th>
-                            <th>Propiedad</th>
-                            <th>Nombre</th>
-                            <!--<th>Estatus</th>-->
-                            <th style="border-radius: 0px 5px 0px 0px">Acciones</th>
+                            <th class="col-1">Fecha</th>
+                            <th class="col-2">Documento</th>
+                            <th class="col-2">Nombre</th>
+                           
+                            <th class="col-1">Acciones</th>
                         </tr>
                         @foreach (var mcdp in Model.DocumentosMCps)
                         {
                             <tr class="tabla-hover">
-                                <td class="col-2">>@mcdp.Fecha</td>
+                                <td class="col-2">@mcdp.Fecha</td>
                                 <td class="col-3">@mcdp.Propiedad</td>
                                 <td class="col-1">@mcdp.Broker</td>
                                 <td class="d-flex justify-content-center mt-1">
-                                    <a class="bg-status-blue-btns-env btn "
+                                    <a class="bg-status-blue-btns-gnrl"
                                        asp-controller="Propiedades" asp-action="Editarco">Ver más</a>
 
                                 </td>
@@ -526,10 +421,8 @@
                                 <td>@mcP.Telefono</td>
                                 <td>@mcP.Correo</td>
                                 <td>@mcP.Responsable</td>
-                                <!--  <td>
-                          Sierra gorda #2345
-                      </td>-->
-                                <td class="d-flex justify-content-center mt-1">
+                               
+                                <td class=" justify-content-center mt-1">
                                     <a class="bg-status-blue-btns-gnrl "
                                        asp-controller="AdminisMC.Fechatracion" asp-action="DatosPropietario">Ver más</a>
 
@@ -577,82 +470,7 @@
                             <th class="col-3">Propiedad</th>
                             <th class="col-4">Acciones</th>
                         </tr>
-                        <tr class="tabla-hover">
-                            <td>03/10/2022</td>
-                            <td>Paola Sánchez</td>
-                            <td>Arizbeth Padilla</td>
-                            <td>
-                                Sierra gorda #5567
-                            </td>
-                            <td class="d-flex justify-content-center ">
-
-                                <a class="bg-status-blue-btns btn" href="#openModal2">Solicitar contrato de intermediación</a>
-
-
-                                <!-- Modal -->
-                                <div id="openModal2" class="modalDialog">
-                                    <div>
-                                        <a href="#close" title="Close" class="close" onclick="resetModal()">X</a>
-
-                                        <div>
-                                            <div class="modal-header" id="modal-header">
-                                                <h1 class="modal-title fs-5">¿Estás seguro de que decea solicitar el contrato de intermediación?</h1>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex d-inline-flex">
-                                                    <button class="btn btn-success mr-1" id="aprbarBtn" onclick="aprovar()">Si</button>
-
-                                                    <button class="btn btn-danger ms-1" id="rechazrBtn" onclick="rechazar()">No</button>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </td>
-                        </tr>
-                        <tr class="tabla-hover">
-                            <td>03/10/2022</td>
-                            <td>Alexandra Vega</td>
-                            <td>Luis Bolaños</td>
-                            <td>
-                                Iglesia #2345
-                            </td>
-                            <td class=" d-flex justify-content-center ">
-
-                                <a class="bg-status-blue-btns btn" href="#openModal2">Solicitar contrato de intermediación</a>
-
-
-                                <!-- Modal -->
-                                <div id="openModal2" class="modalDialog">
-                                    <div>
-                                        <a href="#close" title="Close" class="close" onclick="resetModal()">X</a>
-
-                                        <div>
-                                            <div class="modal-header" id="modal-header">
-                                                <h1 class="modal-title fs-5">¿Estás seguro de que decea solicitar el contrato de intermediación?</h1>
-
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="d-flex d-inline-flex">
-                                                    <button class="btn btn-success mr-1" id="aprbarBtn" onclick="aprovar()">Si</button>
-
-                                                    <button class="btn btn-danger ms-1" id="rechazrBtn" onclick="rechazar()">No</button>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </td>
-                        </tr>
+                      
                         <tr class="tabla-hover">
                             <td>03/10/2022</td>
                             <td>Joel Jimenez</td>
@@ -719,22 +537,21 @@
                     </nav>
                 </div>
             </div>
-            <!--VISTA 3 -->
-            <div class="data-table border shadow" id="tblEntrega">
+            
+                
+            <!--VISTA 3-->
+            <div class="data-table shadow" id="tblEntrega">
                 <div class="message-btn-option">
 
                     <h5>Propiedades en proceso de entrega:</h5>
-                    <p>&nbsp @Model.conteoMCProcesoP</p>
+                    <p>&nbsp 11</p>
 
                 </div>
                 <br />
-                <!-- <div class="message-default">
-                          Aquí viven los leads que se encuentran en una etapa de seguimiento.
-                      </div> -->
+             
                 <div class="table-wrapper-scroll-y my-custom-scrollbar  table-responsive mt-2 shadow">
                     <table class="table table-hover">
                         <tr>
-
                             <th class="col-1">Fecha</th>
                             <th class="col-2">Propiedad</th>
                             <th class="col-2">Cliente</th>
@@ -742,50 +559,43 @@
                             <th class="col-2">Notario</th>
                             <th class="col-1">Etapa</th>
                             <th class="col-2">Acciones</th>
-
                         </tr>
+                        <tr class="tabla-hover">
+                            <td>03/10/2022</td>
+                            <td>Real del encanto</td>
+                            <td>Paola Sánchez</td>
 
-                        @foreach (var mcPP in Model.PropiedadesPMCs)
-                        {
-                            <!--variables dummies solamente para testing del front,Back-End team les
-                              pueden cambiar el nombre si es necesario-->
+                            <td>Héctor Guajardo</td>
+                            <td> - </td>
+                            <td>
 
-                            var etapaProceso = mcPP.Etapa;
-                            var colorEtapa = "";
+                                <!--variables dummies solamente para testing del front,Back-End team les
+                                    pueden cambiar el nombre si es necesario-->
+                                @{
+                                    var etapaProceso = "";
+                                    var colorEtapa = "";
 
-                            if (etapaProceso == "Oportunidad")
-                            {
-                                colorEtapa = "bg-etapa-opurtunidad ";
-                            }
-                            else if (etapaProceso == "Entrega")
-                            {
-                                colorEtapa = "bg-etapa-entrega";
+                                    if (etapaProceso == "oportunidad")
+                                    {
+                                        colorEtapa = "bg-etapa-opurtunidad ";
+                                    }
+                                    else if (etapaProceso == "entrega")
+                                    {
+                                        colorEtapa = "bg-etapa-entrega";
 
-                            }
-                            else { colorEtapa = "bg-etapa-cierre"; }
+                                    }
+                                    else { colorEtapa = "bg-etapa-cierre"; }
 
+                                }
 
-
-
-                            <tr class="tabla-hover">
-                                <td>@mcPP.Fecha</td>
-                                <td>@mcPP.Propiedad</td>
-                                <td>@mcPP.Cliente</td>
-                                <!--<td>paola.1@gmail.com</td>
-                                <td>55-33-55-33-55</td>-->
-                                <td>@mcPP.Broker</td>
-                                <td> - </td>
-                                <td>
-                                    <p class="etapaProcesoPill @colorEtapa">@mcPP.Etapa</p>
-                                </td>
-                                <td>
-                                    <a class="bg-status-blue-btns-gnrl " asp-asp-controller="Propiedades" asp-action="DetallesPropiedadPP">
-                                        Ver más
-                                    </a>
-                                </td>
-                            </tr>
-                        }
-
+                                <p class="etapaProcesoPill @colorEtapa">Entrega</p>
+                            </td>
+                            <td>
+                                <a class="bg-status-blue-btns-gnrl " asp-asp-controller="Propiedades" asp-action="DetallesPropiedadPP">
+                                    Ver más
+                                </a>
+                            </td>
+                        </tr>
 
 
                     </table>
@@ -813,10 +623,7 @@
                     </nav>
                 </div>
             </div>
-
-            <!--<div class="data-table" id="tblPostventa">-->
-        </div>
-
+</div>
         <!--columna de noticias, caledario y atividades-->
         <dixv class="col-3">
             <div class="more-options d-cards ">
@@ -914,7 +721,7 @@
             </div>
         </dixv>
     </div>
-
+</div>
 
 
 
